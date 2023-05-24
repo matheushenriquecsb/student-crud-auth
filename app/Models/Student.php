@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Faker\Core\Uuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;

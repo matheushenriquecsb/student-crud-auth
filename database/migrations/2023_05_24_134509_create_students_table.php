@@ -12,9 +12,9 @@ return new class extends Migration
             $table->uuid('id')->change();
             $table->string('name', 100);
             $table->string('email', 100);
-            $table->integer('age')->unsigned();
-            $table->string('phone', 20);
-            $table->string('cpf', 13);
+            $table->number('age')->unsigned();
+            $table->number('phone', 20);
+            $table->number('cpf', 13);
             $table->boolean('married');
             $table->enum('gender', ["male", "female"]);
             $table->timestamps();

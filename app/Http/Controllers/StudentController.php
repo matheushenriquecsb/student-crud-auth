@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+use App\Http\Requests\StudentRequest;
 use App\Models\Student;
 
 class StudentController extends Controller
 {
-   public function createStudent (Request $request) {
+   public function createStudent (StudentRequest $request) {
     $newStudent = new Student();
 
     $newStudent->name = $request->name;
@@ -38,24 +38,24 @@ class StudentController extends Controller
     return response($getStudentById, 200);
    }
 
-   public function updateStudent (Request $request, $id) {
-    $updateStudanteById = Student::find($id);
+   public function updateStudent (StudentRequest $request, $id) {
+    $updateStudantById = Student::find($id);
 
-    if(!$updateStudanteById) {
+    if(!$updateStudantById) {
       return response('User not found', 404);
     }
 
-    $updateStudanteById->name = $request->name;
-    $updateStudanteById->email = $request->email;
-    $updateStudanteById->phone = $request->phone;
-    $updateStudanteById->cpf = $request->cpf;
-    $updateStudanteById->gender = $request->gender;
-    $updateStudanteById->married = $request->married;
-    $updateStudanteById->age = $request->age;
+    $updateStudantById->name = $request->name;
+    $updateStudantById->email = $request->email;
+    $updateStudantById->phone = $request->phone;
+    $updateStudantById->cpf = $request->cpf;
+    $updateStudantById->gender = $request->gender;
+    $updateStudantById->married = $request->married;
+    $updateStudantById->age = $request->age;
 
-    $updateStudanteById->update();
+    $updateStudantById->update();
 
-    return response($updateStudanteById);
+    return response($updateStudantById);
 
    }
 

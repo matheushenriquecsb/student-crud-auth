@@ -15,13 +15,13 @@ class StudentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => "required",
-            "email" => "required",
-            "phone" => "required",
-            "cpf" => "required",
-            "gender" => "required",
+            "name" => "required|string",
+            "email" => "required|email",
+            "phone" => "required|digits:11",
+            "cpf" => "required|digits:11",
+            "gender" => "required|string",
             "married" => "required|boolean",
-            "age"  => "required",
+            "age"  => "required|integer",
         ];
     }
 }
