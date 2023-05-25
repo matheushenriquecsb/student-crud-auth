@@ -14,7 +14,7 @@ class StudentsSeeder extends Seeder
         DB::table('students')->insert([
             "name" => $faker->name(),
             "email" => $faker->safeEmail,
-            "phone" => $faker->phoneNumber,
+            "phone" => $faker->phoneNumber(),
             "cpf" => $faker->numberBetween(0, 99999999999),
             "gender" => $faker->randomElement(["male", "female"]),
             "married" => $faker->randomElement([true, false]),
