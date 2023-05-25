@@ -9,14 +9,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->uuid('id')->change();
+            $table->id();
             $table->string('name', 100);
             $table->string('email', 100);
-            $table->number('age')->unsigned();
-            $table->number('phone', 20);
-            $table->number('cpf', 13);
-            $table->boolean('married');
+            $table->string('phone', 20);
+            $table->string('cpf', 13);
             $table->enum('gender', ["male", "female"]);
+            $table->boolean('married');
+            $table->integer('age')->unsigned();
             $table->timestamps();
         });
     }

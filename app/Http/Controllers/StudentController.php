@@ -1,23 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentRequest;
 use App\Models\Student;
 
 class StudentController extends Controller
 {
    public function createStudent (StudentRequest $request) {
-    $newStudent = new Student();
 
-    $newStudent->name = $request->name;
-    $newStudent->email = $request->email;
-    $newStudent->phone = $request->phone;
-    $newStudent->cpf = $request->cpf;
-    $newStudent->gender = $request->gender;
-    $newStudent->married = $request->married;
-    $newStudent->age = $request->age;
-
-    $newStudent->save();
+    $newStudent = Student::create([
+        'name' => $request['name'],
+        'email' => $request['email'],
+        'phone' => $request['phone'],
+        'cpf' => $request['cpf'],
+        'gender' => $request['gender'],
+        'married' => $request['married'],
+        'age' => $request['age'],
+    ]);
 
     return response($newStudent, 201);
    }
