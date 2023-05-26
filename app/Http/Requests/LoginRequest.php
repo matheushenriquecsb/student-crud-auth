@@ -4,18 +4,17 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AuthRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     public function rules(): array
     {
         return [
-            //unique:App\Models\Admin,email
-            'email' => 'required|email|',
+            'email' => 'required|email',
             'password' => 'required|min:6|max:12',
         ];
     }

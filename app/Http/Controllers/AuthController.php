@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\AuthRequest;
+use App\Http\Requests\LoginRequest;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
+
 {
     public function registerAdmin(AuthRequest $request)  {
         $newAdmin = new Admin();
@@ -17,6 +19,7 @@ class AuthController extends Controller
 
         return response($newAdmin, 201);
     }
+
     public function loginAdmin(AuthRequest $request) {
         $loginAdmin = new Admin();
 
