@@ -14,8 +14,7 @@ class AuthRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //unique:App\Models\Admin,email
-            'email' => 'required|email|',
+            'email' => 'required|email|unique:App\Models\Admin,email',
             'password' => 'required|min:6|max:12',
         ];
     }

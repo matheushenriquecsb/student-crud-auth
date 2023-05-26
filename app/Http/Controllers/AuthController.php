@@ -20,7 +20,7 @@ class AuthController extends Controller
         return response($newAdmin, 201);
     }
 
-    public function loginAdmin(AuthRequest $request) {
+    public function loginAdmin(LoginRequest $request) {
         $loginAdmin = new Admin();
 
         $loginAdmin->email = $request->email;
