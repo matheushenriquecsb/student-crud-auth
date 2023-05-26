@@ -33,6 +33,7 @@ $ php artisan serve
 
 - POST /api/v1/admin/register - registro de usuário admin<br>   
 - POST /api/v1/admin/login - login de admin autenticado para acessar as rotas abaixo<br> 
+- POST /api/v1/admin/logout - logout de usuario autenticado<br> 
  
 - GET /api/v1/students - retorna todos os usuários salvos no banco
 - GET /api/v1/students/{id} - retorna usuário do banco a partir do id declarado no params
