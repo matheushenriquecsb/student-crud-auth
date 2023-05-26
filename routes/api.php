@@ -14,4 +14,5 @@ Route::group(["middleware" => ["auth:sanctum"]], function() {
     Route::post('/v1/students',  [StudentController::class, 'createStudent']);
     Route::put('/v1/students/{id}',  [StudentController::class, 'updateStudent']);
     Route::delete('/v1/students/{id}',  [StudentController::class, 'deleteStudent']);
+    Route::post('v1/admin/logout', [AuthController::class, 'logout']);
 });
